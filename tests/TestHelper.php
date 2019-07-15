@@ -1,4 +1,5 @@
 <?php
+
 namespace LWS\ExportActions\Tests;
 
 use Illuminate\Filesystem\Filesystem;
