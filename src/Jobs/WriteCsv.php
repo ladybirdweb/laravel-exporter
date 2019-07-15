@@ -2,7 +2,6 @@
 
 namespace LWS\ExportActions\Jobs;
 
-use PDF;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;
@@ -18,7 +17,6 @@ class WriteCsv implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $request;
-    
 
     public $timeout = 120;
 
@@ -30,8 +28,6 @@ class WriteCsv implements ShouldQueue
     public function __construct(Request $request)
     {
         $this->requestData = $request->all();
-        
-        
     }
 
     /**
@@ -42,20 +38,15 @@ class WriteCsv implements ShouldQueue
     public function handle()
     {
         $client = new Client();
-        
 
         $request = new \GuzzleHttp\Psr7\Request('GET', $this->requestData->url);
         $promise = $client->sendAsync($request)->then(function ($responseData) {
-
             $formatter = Formatter::make($responseData->getBody(), Formatter::JSON);
-            $csv   = $formatter->toCsv();
+            $csv = $formatter->toCsv();
 
-            Storage::disk('local')->put('csvfile.csv',$csv);
-
+            Storage::disk('local')->put('csvfile.csv', $csv);
         });
 
         $promise->wait();
-
     }
-  
 }

@@ -15,7 +15,7 @@ class CreateJobUpdate extends Migration
     {
         Schema::create('job_update', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("name");
+            $table->string('name');
             $table->string('status');
             $table->string('file_name');
             $table->timestamps();

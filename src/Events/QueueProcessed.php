@@ -2,11 +2,8 @@
 
 namespace LWS\ExportActions\Events;
 
-
-
 class QueueProcessed
 {
-
     public $file_name;
     public $table_id;
 
@@ -16,7 +13,7 @@ class QueueProcessed
      * @param  \App\Order  $order
      * @return void
      */
-    public function __construct($file_name,$table_id)
+    public function __construct($file_name, $table_id)
     {
         $this->file_name = $file_name;
         $this->table_id = $table_id;

@@ -2,13 +2,13 @@
 
 namespace LWS\ExportActions\Jobs;
 
+use PDF;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use PDF;
-use Illuminate\Support\Facades\Storage;
 use LWS\ExportActions\Events\QueueProcessed;
 
 class WritePdf implements ShouldQueue
@@ -17,7 +17,6 @@ class WritePdf implements ShouldQueue
 
     protected $html;
     protected $table_id;
-    
 
     public $timeout = 120;
 
@@ -26,11 +25,10 @@ class WritePdf implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($html,$table_id)
+    public function __construct($html, $table_id)
     {
         $this->html = $html;
         $this->table_id = $table_id;
-        
     }
 
     /**
@@ -43,11 +41,8 @@ class WritePdf implements ShouldQueue
         PDF::SetTitle('Export Data.');
         PDF::AddPage();
         PDF::writeHTML($this->html);
-        $pdfString = PDF::Output('hello_world.pdf','S');
-        Storage::disk('local')->put('pdf.pdf',$pdfString);
-        event(new QueueProcessed(storage_path()."/app/pdf.pdf",$this->table_id));
+        $pdfString = PDF::Output('hello_world.pdf', 'S');
+        Storage::disk('local')->put('pdf.pdf', $pdfString);
+        event(new QueueProcessed(storage_path().'/app/pdf.pdf', $this->table_id));
     }
-
-   
-  
 }
