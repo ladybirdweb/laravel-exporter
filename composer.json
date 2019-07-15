@@ -1,5 +1,5 @@
 {
-    "name": "jeroen-g/laravel-packager",
+    "name": "lws/exportactions",
     "description": "This package exports data from an API in CSV,PDF Formats",
     "license": "MIT",
     "authors": [
