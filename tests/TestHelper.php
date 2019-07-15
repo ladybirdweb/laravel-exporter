@@ -1,6 +1,5 @@
 <?php
-
-namespace JeroenG\Packager\Tests;
+namespace LWS\ExportActions\Tests;
 
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;

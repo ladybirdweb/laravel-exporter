@@ -1,6 +1,6 @@
 <?php
 
-namespace JeroenG\Packager\Tests;
+namespace LWS\ExportActions\Tests;
 
 use Orchestra\Testbench\TestCase as TestBench;
 
@@ -51,6 +51,6 @@ abstract class TestCase extends TestBench
      */
     protected function getPackageProviders($app)
     {
-        return ['JeroenG\Packager\PackagerServiceProvider'];
+        return ['LWS\ExportActions\ExportServiceProvider'];
     }
 }
