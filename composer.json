@@ -1,19 +1,12 @@
 {
     "name": "jeroen-g/laravel-packager",
-    "description": "A cli tool for creating Laravel packages.",
-    "keywords": [
-        "Packager",
-        "Laravel",
-        "package",
-        "skeleton"
-    ],
-    "homepage": "https://github.com/Jeroen-G/laravel-packager",
-    "license": "EUPL-1.1",
+    "description": "This package exports data from an API in CSV,PDF Formats",
+    "license": "MIT",
     "authors": [
         {
-            "name": "JeroenG",
-            "email": "jeroengjeroeng@gmail.com",
-            "homepage": "https://github.com/Jeroen-G"
+            "name": "Phaniraj K",
+            "email": "phaniraj.k@ladybirdweb.com",
+            "homepage": "https://github.com/Phaniraj35"
         }
     ],
     "require": {
