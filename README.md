@@ -37,6 +37,14 @@ You need migrate the database using
 ``` bash
 $ php artisan migrate
 ```
+
+Change QUEUE_CONNECTION entry in .env file
+
+```
+QUEUE_CONNECTION=database
+```
+
+
 This package sets up three routes
 * ```/export```- Accepts ```url``` and ```format``` to Export.
 * ```/progress``` - Return Progress of Export operation taking long time (usually PDF files),running in Queue.
