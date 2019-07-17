@@ -2,11 +2,11 @@
 
 Efficiently Export Datatable Data In CSV,PDF Format.
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/?branch=develop)
-[![Build Status](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/badges/build.png?b=develop)](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/build-status/develop)
-[![StyleCI](https://github.styleci.io/repos/196688771/shield?branch=develop)](https://github.styleci.io/repos/196688771)
-[![Build Status](https://travis-ci.org/ladybirdweb/laravel-exporter.svg?branch=develop)](https://travis-ci.org/ladybirdweb/laravel-exporter)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/badges/code-intelligence.svg?b=develop)](https://scrutinizer-ci.com/code-intelligence)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/build-status/master)
+[![StyleCI](https://github.styleci.io/repos/196688771/shield?branch=master)](https://github.styleci.io/repos/196688771)
+[![Build Status](https://travis-ci.org/ladybirdweb/laravel-exporter.svg?branch=master)](https://travis-ci.org/ladybirdweb/laravel-exporter)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/ladybirdweb/laravel-exporter/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 ## Installation
 
@@ -39,10 +39,10 @@ $ php artisan migrate
 ```
 This package sets up three routes
 * ```/export```- Accepts ```url``` and ```format``` to Export.
-* ```/progress``` - Return Progress of Long Export Running in Queue.
-* ```/download/{id}``` - After the Export File Processed in background,You can download the file by passing the job id.
+* ```/progress``` - Return Progress of Export operation taking long time (usually PDF files),running in Queue.
+* ```/download/{id}``` - After the Export File Processed in background,You can download the file by passing the job id (id of the job can be found in ```/progress```).
 
-Typical Call to the API to export Data in CSV Format
+Typical Call to the API to export Data in CSV Format:
 
 ```
 this.axios({
@@ -56,3 +56,4 @@ this.axios({
 })
 ```
 __**Note**__: This Package return downloadable file as response. i.e If the frontend is running on different PORT the frontend has to take care of making the download in browser.
+
